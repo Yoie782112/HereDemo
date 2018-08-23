@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.here.android.example.map.basic">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:hardwareAccelerated="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--Developers should put application credentials here.To obtain them, please register the application
+         at https://developer.here.com/develop/mobile-sdks-->
+        <meta-data
+            android:name="com.here.android.maps.appid"
+            android:value="J7W3b6CICYpc8HC1Ok6O" />
+        <meta-data
+            android:name="com.here.android.maps.apptoken"
+            android:value="8bQpARA5cwlmGYDWXK8fOQ" />
+        <meta-data
+            android:name="com.here.android.maps.license.key"
+            android:value="UYbFxc+5ZHfmCdjKyxKMhemxyEDiEJzuIWDqxgPPije3+N9r7+wjaeuEdqZmrxIl9lwHUpG4CGHWxNQzVP7fDqtB05KHLHIA2P79uYLsQo95ySHN3iaD4+5VI3T1rUWEUurkJH4tDHHN1PyvPcszlA90RfBCEQTYvQHLz8pd9US6Zz0H2PHGk8KW9RR5NFWj+B9Xfm4r8h43OcPWKKslRbw/zp26v5XUoxQPbq77+4am30ylTMrL3vyXg7nI8K72X5IBTSJWLhSvNd18KHUOkuzM7sghiBTKCYx7aqtNhtuBW0pR8cudhtvHuCqc6e/oNWrZNqQv6ENriTrndTMJxNsAq4ObnuK44DbLJO4MFonwhe45gCrlAIHfdXos3FLt8CDHkt+e4tjyJb++b5YUYV+Licvhxh9X3lreoJ9CklCI3c34KYUcr0To5MnkvMadDwJsQZTi2+W4cHlw+Pmo2Iq4b7YMlRfYIe/Rzr1f6Od/K6jnLtskmC67xsXLnyAQ7aaOqDz7J9+trS6hP55SOAGDxex8ibIqcF/p7Bje18fW++1SXMG/QBdfF8JV0Tpj1UkcQOXIjy3sLDKwlcJWSvfIfmHRfjjmxLv82R/utBkDD/1LkvGeD6347NutGu45j7qLvL9zpzJH+6mAC7386y1wnAssDbTOaT5GWhzm3oI=" />
+
+         <!--Developers should always provide custom values for each of {YOUR_LABEL_NAME} and {YOUR_INTENT_NAME}.
+         Do not reuse HERE SDK defaults.-->
+        <meta-data
+            android:name="INTENT_NAME"
+            android:value="android.intent.action.MAIN" />
+        <service
+            android:name="com.here.android.mpa.service.MapService"
+            android:label="HereMapService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"></action>
+            </intent-filter>
+        </service>
+    </application>
+</manifest>
